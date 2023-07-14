@@ -8,7 +8,7 @@
   <a-tooltip
       :title="promptSort"
       placement="topLeft"
-      :overlayClassName="'toolTipOverlayClass'">
+      :overlayClassName="'toolTipOverlayClass'"><!--使用overlayClassName属性-->
     <a-icon :offset="[15, -2]" type="question-circle" style="font-size: 12px;color: rgba(0, 0, 0, 0.35)"/>
   </a-tooltip>
 </template>
