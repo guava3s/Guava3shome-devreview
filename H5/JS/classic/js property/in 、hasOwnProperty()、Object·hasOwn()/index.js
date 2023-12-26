@@ -18,13 +18,13 @@ class Worker extends Person {
 
 const worker = new Worker()
 
-// Object.prototype.hasOwnProperty: 返回Boolean，判断目标属性是否为自身属性或集成实例属性（不包含继承原型属性）
+// Object.prototype.hasOwnProperty: 返回Boolean，判断目标属性是否为【自有】属性或【继承实例】属性（不包含【继承原型】属性）
 function testHasOwnProperty() {
     console.log('worker = ', worker)
     console.log('worker.hasOwnProperty(\'height\') = ', worker.hasOwnProperty('height'))
 }
 
-// 检测改属性是否存在于 【对象上】或其 【原型链】上
+// 检测该属性是否存在于 【对象上】或其 【原型链】上
 function testIn() {
     console.log('\'height\' in demo = ', ('height' in worker))
 }
@@ -38,3 +38,8 @@ function testObjectHasOwn() {
 testHasOwnProperty()
 testIn()
 testObjectHasOwn()
+
+
+// 总结：
+// 判断是否为自有属性:                   xxx.hasOwnProperty(prop)
+// 判断是否为自有属性or原型链属性:        prop in xxx   Object.hasOwn(xxx, prop')
