@@ -38,8 +38,14 @@ function testObjectKeys() {
     console.log('Object.keys(worker) = ', Object.keys(worker))
 }
 
-// 返回该对象所有【自有】属性(包含【可枚举】【不可枚举】属性
+// 返回该对象所有【自有】属性(包含【可枚举】【不可枚举】属性,不包括使用【symbol值】作为名称的属性)
 function testObjectGetOwnPropertyNames() {
+    const worker = new Worker()
+    console.log('Object.getOwnPropertyNames(worker) = ', Object.getOwnPropertyNames(worker))
+}
+
+// 返回当前对象所有【自有】【symbol值】属性
+function testObjectGetOwnPropertySymbols() {
     const worker = new Worker()
     console.log('Object.getOwnPropertyNames(worker) = ', Object.getOwnPropertyNames(worker))
 }
@@ -48,6 +54,7 @@ function testObjectGetOwnPropertyNames() {
 testForIn()
 testObjectKeys()
 testObjectGetOwnPropertyNames()
+testObjectGetOwnPropertySymbols()
 
 // 总结：
 // 获取自身可枚举属性:       Object.keys(xxx)   for...in
